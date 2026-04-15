@@ -14,4 +14,4 @@ npm i express mongoose cors dotenv { Backend Dependencies }
 
 npm i nodemon --save-dev  { Dev Dependency }
 
-- nodemon - Automatically restarts the server when file changes are detected (for faster development)
+- nodemon - Automatically restarts the server when file changes are detected (for faster development) 

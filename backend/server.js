@@ -3,6 +3,7 @@ const cors = require("cors");         // cors (middleware) , it allows frontend 
 require("dotenv").config();           // loads the enovironment variables from .env file ,ex:- PORT DB URL, API keys.
 
 const connectDB = require("./config/db");
+const taskRoutes = require("./routes/taskRoutes");
 
 // Creating the Server
 const app = express();                // creates an express application , the main control.
@@ -13,7 +14,7 @@ connectDB();
 //Middleware setup
 app.use(cors());
 app.use(express.json());              // converts incoming JSON to JavaScript object,  required when sending data from frontend (POST, PUT)
-
+app.use("/api", taskRoutes);
 //Test Route
 app.get("/",(req, res) => {           // , / = homepage route, req = request from client, res = response send back.
     res.send("API is running...");    // when user opens the localhost then he will able to see this...

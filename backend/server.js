@@ -1,11 +1,14 @@
-// Import libraries
-
 const express = require("express");   // import express.js , which is a backend framework for Node.js, it helps to create servers, APIs, routes easily.
 const cors = require("cors");         // cors (middleware) , it allows frontend to talk to our backend.
 require("dotenv").config();           // loads the enovironment variables from .env file ,ex:- PORT DB URL, API keys.
 
+const connectDB = require("./config/db");
+
 // Creating the Server
 const app = express();                // creates an express application , the main control.
+
+//connectDB
+connectDB();
 
 //Middleware setup
 app.use(cors());
